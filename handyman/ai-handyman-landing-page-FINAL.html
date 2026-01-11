@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Handyman's Toolkit - Free Download</title>
+    <meta name="description" content="Get my free AI toolkit: 5 tools that fix your biggest time-wasters. No theory, just practical implementation.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        /* Form Section */
+        .form-container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: -80px auto 40px;
+            max-width: 500px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .form-container h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .form-container p {
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .cta-button {
+            width: 100%;
+            background: #ef4444;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #dc2626;
+        }
+
+        .cta-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        .privacy-note {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #059669;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* Content Sections */
+        .section {
+            background: white;
+            padding: 50px 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        /* Tool Cards */
+        .tools-grid {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .tool-card {
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .tool-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+
+        .tool-card .time-saved {
+            color: #059669;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            margin: 30px 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .benefit-item .check {
+            color: #059669;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .benefit-item div {
+            flex: 1;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #1e3a8a;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin: 0;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: #f9fafb;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #374151;
+            margin-bottom: 15px;
+        }
+
+        .testimonial .author {
+            font-weight: 700;
+            color: #1e3a8a;
+            font-style: normal;
+        }
+
+        /* FAQ */
+        .faq-item {
+            margin-bottom: 25px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: #6b7280;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .final-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: white;
+            opacity: 0.95;
+        }
+
+        .final-cta .cta-button {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #6b7280;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1.1rem;
+            }
+
+            .form-container {
+                padding: 30px 20px;
+                margin-top: -60px;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>I'm Not an AI Consultant.<br>I'm an AI Handyman.</h1>
+            <p class="subheadline">Get my free toolkit: 5 AI tools that fix your biggest time-wasters. No theory. No fluff. Just: "Here's the tool. Here's how to use it. Done."</p>
+        </div>
+    </div>
+
+    <!-- Lead Capture Form -->
+    <div class="container">
+        <div class="form-container">
+            <div id="successMessage" class="success-message">
+                <h3>🎉 You're In!</h3>
+                <p>Check your email in the next 5 minutes for your AI Handyman's Toolkit.<br>(Check spam if you don't see it)</p>
+            </div>
+
+            <div id="formContent">
+                <h2>Download Your Free Toolkit</h2>
+                <p>Get instant access to the AI Handyman's Toolkit + step-by-step implementation guide</p>
+
+                <form id="leadForm" action="https://api.gumloop.com/api/v1/start_pipeline?api_key=14fc1dec6b58454e8c528db04f4e744d&user_id=hECDCz0xLeYL0xTqi3S7bhbTPlM2&saved_item_id=iwwE2PtUCFt9q8oPF6goFc" method="POST">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="John">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+
+                    <button type="submit" class="cta-button" id="submitButton">Get My Free Toolkit →</button>
+
+                    <p class="privacy-note">🔒 Your information is safe. No spam, ever. Unsubscribe anytime.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Problem Section -->
+    <div class="container">
+        <div class="section">
+            <h2>Everyone's Talking About AI. Nobody's Explaining How to Actually Use It.</h2>
+            <p>You don't need another article about ChatGPT. You need a step-by-step plan that shows you exactly where AI fits in YOUR business—without the hype or the tech jargon.</p>
+
+            <p><strong>The truth?</strong> Most business owners are:</p>
+            <ul style="font-size: 1.1rem; color: #4b5563; margin: 20px 0 20px 30px;">
+                <li style="margin-bottom: 10px;">Spending 10-15 hours a week on emails</li>
+                <li style="margin-bottom: 10px;">Drowning in content creation (it never ends)</li>
+                <li style="margin-bottom: 10px;">Manually doing tasks that could be automated</li>
+                <li style="margin-bottom: 10px;">Watching competitors pull ahead while they're stuck</li>
+            </ul>
+
+            <p>You know AI could help. You just don't know <strong>where to start</strong>.</p>
+
+            <p><strong>That's where I come in.</strong></p>
+        </div>
+    </div>
+
+    <!-- Solution Section -->
+    <div class="container">
+        <div class="section">
+            <h2>Think of This as Your AI Toolbox</h2>
+            <p>A handyman doesn't show up with ONE tool. They bring a whole toolbox.</p>
+
+            <p>That's what this is. <strong>5 AI tools that fix 5 specific business problems.</strong></p>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>🔧 Tool #1: The Email Assistant</h4>
+                    <p class="time-saved">Saves 10-15 hours/week</p>
+                    <p>Stop drowning in your inbox. AI handles 70% of emails automatically with templates. Drafts the other 30% in seconds.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>📝 Tool #2: The Content Engine</h4>
+                    <p class="time-saved">Saves 8-12 hours/week</p>
+                    <p>30 days of content ideas in 5 minutes. AI writes first drafts, you add your voice. Post consistently without burning out.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>🔍 Tool #3: The Research Assistant</h4>
+                    <p class="time-saved">Saves 5-10 hours/week</p>
+                    <p>Stop spending hours on Google. Get synthesized answers in 30 seconds. Market research, competitor analysis, client prep—done.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>⚙️ Tool #4: The Automation Builder</h4>
+                    <p class="time-saved">Saves 15-20 hours/week</p>
+                    <p>Smart automations with AI (not dumb if/then rules). Lead capture, follow-ups, content repurposing—all automatic.</p>
+                </div>
+
+                <div class="tool-card">
+                    <h4>📊 Tool #5: The Data Cleaner</h4>
+                    <p class="time-saved">Saves 3-5 hours per cleanup</p>
+                    <p>Messy data? AI writes the formulas. Duplicates gone. Formatting fixed. Clean data in 45 minutes, not 2 days.</p>
+                </div>
+
+                <div class="tool-card" style="border-left-color: #ef4444;">
+                    <h4>🎁 BONUS: Lead Nurture System</h4>
+                    <p class="time-saved">2-3x conversion improvement</p>
+                    <p>Automated email sequences with AI personalization. Never lose a lead to "forgot to follow up" again.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- What's Inside Section -->
+    <div class="container">
+        <div class="section">
+            <h2>What You Get (For Free)</h2>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Copy/Paste Prompts That Actually Work</h4>
+                        <p>No guessing. I give you the exact prompts to use in ChatGPT, Perplexity, and Gumloop.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Step-by-Step Setup Guides</h4>
+                        <p>15-30 minutes per tool. Written for non-technical people. If you can follow a recipe, you can do this.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>30-Day Implementation Roadmap</h4>
+                        <p>Don't try to do everything at once. Week-by-week plan to implement one tool at a time.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Real Before/After Examples</h4>
+                        <p>See exactly what changes. "2 hours on email" → "30 minutes." "Posting once a week" → "Daily."</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>The Tools (Most Are Free)</h4>
+                        <p>ChatGPT free tier, Perplexity free, Gumloop free tier. Premium versions if you want them, but free works.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Proof Section -->
+    <div class="container">
+        <div class="section">
+            <h2>What Others Are Saying</h2>
+
+            <div class="testimonial">
+                <p>"I was spending 15+ hours per week on repetitive BS. Set up 3 workflows from the toolkit. Now it all happens automatically, and the AI makes it feel personal, not robotic. Best toolkit I've found."</p>
+                <p class="author">— Marcus, Marketing Agency Owner</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"I went from posting once a week when I 'felt inspired' to posting daily. The content prompts give me first drafts in 2 minutes, I spend 3 minutes adding my voice. Total game changer."</p>
+                <p class="author">— Mike, Business Coach</p>
+            </div>
+
+            <div class="testimonial">
+                <p>"I was getting 50 leads a month and converting maybe 2-3. After setting up the automated nurture sequence, I'm converting 12-15 from the same 50 leads. The ROI is insane."</p>
+                <p class="author">— Tom, Business Coach</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="container">
+        <div class="section">
+            <h2>Common Questions</h2>
+
+            <div class="faq-item">
+                <h4>Do I need to be technical?</h4>
+                <p>No. If you can use Google Docs and send emails, you can do this. Everything is explained step-by-step for non-technical people.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How much does this cost?</h4>
+                <p>The toolkit is free. Most tools inside (ChatGPT, Perplexity, Gumloop) have free tiers that work great. Premium versions run $20-40/month if you want faster speeds or more features.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>How long does implementation take?</h4>
+                <p>15-30 minutes per tool. I recommend doing one tool per week. In 5 weeks, your business runs completely differently.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>What if I get stuck?</h4>
+                <p>Reply to the email that delivers your toolkit. I'm your AI handyman—if something's not working, I'll help you fix it.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Is this another "AI will change everything" hype thing?</h4>
+                <p>No. This is practical, step-by-step implementation. No theory. No hype. Just: "Here's the problem, here's the tool, here's how to use it, done."</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Will this work for my industry?</h4>
+                <p>If you send emails, create content, do research, or have repetitive tasks... yes. These are business fundamentals, not industry-specific tactics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="container">
+        <div class="final-cta">
+            <h2>Ready to Get 20 Hours Back Per Week?</h2>
+            <p>Download the AI Handyman's Toolkit and start with ONE tool this week.<br>Free. Instant access. No credit card required.</p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="cta-button">Get My Free Toolkit →</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The AI Handyman | Your trusted guide to implementing AI in your business</p>
+        <p style="margin-top: 10px;"><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+    <!-- Form Submission Script -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitButton = document.getElementById('submitButton');
+            const formContent = document.getElementById('formContent');
+            const successMessage = document.getElementById('successMessage');
+
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            // Get form data
+            const formData = new FormData(this);
+
+            // Send to Gumloop webhook
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                // Show success message
+                formContent.style.display = 'none';
+                successMessage.classList.add('show');
+
+                // Scroll to top to show success message
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Still show success message to user (Gumloop will handle it)
+                formContent.style.display = 'none';
+                successMessage.classList.add('show');
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html>

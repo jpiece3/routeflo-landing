@@ -1,0 +1,13 @@
+{
+  "agent_name": "DemoBot",
+  "agent_type": "content_repurposer",
+  "business_name": "Vibe Marketing",
+  "target_customer": "small service businesses",
+  "trigger_type": "webhook",
+  "tools": [
+    "web_search"
+  ],
+  "brand_voice": "creative, engaging",
+  "client_name": "Demo Client",
+  "sdk_ready": true
+}

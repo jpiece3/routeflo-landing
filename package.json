@@ -1,0 +1,15 @@
+{
+  "name": "routeflo-landing",
+  "version": "1.0.0",
+  "description": "RouteFlo landing page",
+  "scripts": {
+    "start": "serve -s . -l $PORT",
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

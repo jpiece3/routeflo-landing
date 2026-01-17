@@ -1,0 +1,11 @@
+{
+  "name": "routeflo-landing",
+  "version": "1.0.0",
+  "description": "RouteFlo landing page",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

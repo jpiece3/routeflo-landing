@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 10-Point Route Audit | RouteFlo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #10b981;
+        }
+
+        .logo {
+            color: #10b981;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .instructions {
+            background: #f8fafc;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .question {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .question:last-of-type {
+            border-bottom: none;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .question-title {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            display: inline;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin: 0.75rem 0;
+        }
+
+        .checkboxes {
+            display: flex;
+            gap: 1.5rem;
+            margin: 0.75rem 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+        }
+
+        .if-no {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-style: italic;
+            padding-left: 0.5rem;
+            border-left: 3px solid #f59e0b;
+        }
+
+        .score-section {
+            background: #064e3b;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .score-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .score-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .score-table th,
+        .score-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .score-table th {
+            color: #a7f3d0;
+            font-weight: 600;
+        }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+
+        .cost-table th,
+        .cost-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .cost-table th {
+            background: #f8fafc;
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .highlight strong {
+            color: #92400e;
+        }
+
+        .cta-section {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: #064e3b;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            text-align: left;
+            max-width: 500px;
+            margin: 1rem auto;
+            font-size: 0.95rem;
+        }
+
+        .features li {
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">RouteFlo</div>
+        <h1>The 10-Point Route Audit</h1>
+        <p class="subtitle">Find What's Costing You Hours Every Week</p>
+    </div>
+
+    <div class="instructions">
+        <strong>Instructions:</strong> Answer each question honestly. Each "No" is a gap that's probably costing you time. Most operations score 3-5 on the first pass.
+    </div>
+
+    <div class="questions">
+        <div class="question">
+            <span class="question-number">1</span>
+            <span class="question-title">Single Source of Truth</span>
+            <p class="question-text">Do all your customer stops, service days, and route assignments live in ONE place?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: You're probably updating multiple spreadsheets, cross-referencing paper notes, or keeping critical info in someone's head.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">2</span>
+            <span class="question-title">Service Day Clarity</span>
+            <p class="question-text">Can you instantly see which customers need service on any given day?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: You're manually filtering spreadsheets or flipping through pages to figure out Monday's stops vs. Wednesday's stops.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">3</span>
+            <span class="question-title">Route Generation Speed</span>
+            <p class="question-text">Can you generate a full day's routes for all drivers in under 5 minutes?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: You're spending mornings playing dispatcher instead of running your operation.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">4</span>
+            <span class="question-title">Driver Independence</span>
+            <p class="question-text">Can your drivers start their day without calling you to ask where to go?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: You're the bottleneck. Every "where do I go next?" call is time stolen from both of you.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">5</span>
+            <span class="question-title">New Customer Setup</span>
+            <p class="question-text">Can you add a new customer without manually redoing existing routes?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: Growth creates chaos. New customers should slot into existing routes, not break them.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">6</span>
+            <span class="question-title">Visual Route Overview</span>
+            <p class="question-text">Can you see all your routes on a map to check coverage and efficiency?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: You might have drivers crossing paths or missing obvious geographic clusters.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">7</span>
+            <span class="question-title">Schedule Visibility</span>
+            <p class="question-text">Can you see which drivers are scheduled for which days at a glance?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: Planning time off, handling sick days, or balancing workloads becomes guesswork.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">8</span>
+            <span class="question-title">Driver Has Navigation</span>
+            <p class="question-text">Do your drivers have their route with turn-by-turn directions on their phone?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: Drivers are manually entering addresses or calling you for directions. Both waste time.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">9</span>
+            <span class="question-title">Change Management</span>
+            <p class="question-text">When a customer changes service days, can you update it in one place?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: One change means updating multiple lists. Things fall through.</p>
+        </div>
+
+        <div class="question">
+            <span class="question-number">10</span>
+            <span class="question-title">Backup Plan</span>
+            <p class="question-text">If you were out sick tomorrow, could someone else generate routes?</p>
+            <div class="checkboxes">
+                <div class="checkbox-item"><div class="checkbox"></div> Yes</div>
+                <div class="checkbox-item"><div class="checkbox"></div> No</div>
+            </div>
+            <p class="if-no">If no: Your routing knowledge is a single point of failure. That's a risk to the business.</p>
+        </div>
+    </div>
+
+    <div class="score-section">
+        <h2>Score Yourself</h2>
+        <p>Count your "Yes" answers:</p>
+        <table class="score-table">
+            <tr>
+                <th>Score</th>
+                <th>What It Means</th>
+            </tr>
+            <tr>
+                <td><strong>8-10</strong></td>
+                <td>Your system is solid. You're ahead of most operations.</td>
+            </tr>
+            <tr>
+                <td><strong>5-7</strong></td>
+                <td>You've got the basics, but there are gaps costing you time.</td>
+            </tr>
+            <tr>
+                <td><strong>3-4</strong></td>
+                <td>You're working harder than you need to. Significant time being lost.</td>
+            </tr>
+            <tr>
+                <td><strong>0-2</strong></td>
+                <td>Your routing system is held together with duct tape. Time for a change.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="cost-section">
+        <h2>What Each Gap Costs You</h2>
+        <table class="cost-table">
+            <tr>
+                <th>Gap</th>
+                <th>Typical Time Lost</th>
+            </tr>
+            <tr>
+                <td>No single source of truth</td>
+                <td>2-3 hours/week chasing information</td>
+            </tr>
+            <tr>
+                <td>Manual route generation</td>
+                <td>5-10 hours/week on planning</td>
+            </tr>
+            <tr>
+                <td>Driver phone calls</td>
+                <td>30-60 min/day of interruptions</td>
+            </tr>
+            <tr>
+                <td>No visual overview</td>
+                <td>Inefficient routes, extra fuel</td>
+            </tr>
+            <tr>
+                <td>Change management chaos</td>
+                <td>1-2 hours/week fixing mistakes</td>
+            </tr>
+        </table>
+
+        <div class="highlight">
+            <strong>Most operations with scores under 5 are losing 10+ hours per week on routing.</strong><br>
+            That's 500+ hours per year. What would you do with that time back?
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>The Fix</h2>
+        <p>Every "No" on this checklist is something route management software handles automatically.</p>
+        <p><strong>RouteFlo was built specifically for mat and linen delivery operations.</strong></p>
+
+        <ul class="features">
+            <li>All stops in one place</li>
+            <li>Generate routes in seconds</li>
+            <li>Drivers get Google Maps</li>
+            <li>Add customers easily</li>
+            <li>See everything on a map</li>
+            <li>Calendar view for planning</li>
+        </ul>
+
+        <p style="margin-top: 1.5rem;"><strong>Want to see how it works?</strong></p>
+        <p>15-minute demo. No pressure, no long sales pitch.</p>
+        <a href="https://routeflo.com" class="cta-button">Book a Demo</a>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 RouteFlo. Free to use and share.</p>
+        <p>Questions? Email hello@routeflo.com</p>
+    </div>
+</body>
+</html>

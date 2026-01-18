@@ -3,5 +3,7 @@
   "name": "routeflo-landing",
   "public": true,
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "buildCommand": "",
+  "outputDirectory": "."
 }

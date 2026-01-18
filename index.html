@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -140,6 +140,9 @@
     </script>
 </head>
 <body>
+    <!-- Subtle noise texture overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
     <header>
         <nav>
             <div class="logo">RouteFlo</div>
@@ -149,14 +152,15 @@
 
     <main>
         <section class="hero">
+            <div class="route-pattern" aria-hidden="true"></div>
             <div class="hero-content">
                 <div class="hero-text">
+                    <p class="hero-sub-keyword">Recurring Route Optimization for Mat Rental & Linen Services</p>
                     <h1>Route Your Drivers.<br>Not Your Day.</h1>
-                    <p class="hero-sub-keyword">Recurring Route Optimization Software for Mat Rental & Linen Services</p>
                     <p class="hero-sub">Stop managing mat deliveries with spreadsheets and phone calls. Our route optimization software generates efficient driver routes in seconds - giving your team a schedule they can actually follow.</p>
                     <a href="#demo" class="cta-button primary-cta">See It In Action</a>
 
-                    <!-- Micro Stats Row -->
+                    <!-- Micro Stats Row - Amber accent for ROI -->
                     <div class="hero-stats">
                         <div class="hero-stat">
                             <span class="stat-value">95%</span>
@@ -182,17 +186,25 @@
 
         <!-- Trust Ribbon -->
         <div class="trust-ribbon">
-            <p>Trusted by mat rental & linen companies across the US</p>
+            <p>Trusted by mat rental & linen companies across the <span>US</span></p>
         </div>
 
-        <!-- Social Proof Section -->
+        <!-- Social Proof Section - Redesigned without empty logos -->
         <section class="social-proof">
-            <div class="logo-row">
-                <div class="logo-placeholder"></div>
-                <div class="logo-placeholder"></div>
-                <div class="logo-placeholder"></div>
-                <div class="logo-placeholder"></div>
-                <div class="logo-placeholder"></div>
+            <!-- Credibility Stats instead of empty logos -->
+            <div class="credibility-stats fade-in-up">
+                <div class="credibility-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Operations</span>
+                </div>
+                <div class="credibility-stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Weekly Stops</span>
+                </div>
+                <div class="credibility-stat">
+                    <span class="stat-number">3hrs</span>
+                    <span class="stat-label">Saved Daily</span>
+                </div>
             </div>
 
             <div class="testimonial-block fade-in-up">
@@ -206,27 +218,101 @@
             </div>
 
             <div class="proof-metrics">
-                <div class="proof-metric">
+                <div class="proof-metric scale-in">
                     <span class="metric-value">10,000+</span>
                     <span class="metric-label">stops optimized weekly</span>
                 </div>
             </div>
         </section>
 
+        <!-- Diagonal Divider -->
+        <div class="diagonal-divider" aria-hidden="true"></div>
+
+        <!-- Before/After Chaos Visual -->
+        <section class="chaos-to-order">
+            <h2>We Get Your Chaos</h2>
+            <p class="section-subtitle">"It's 5am. The whiteboard is a mess. A driver called out. And you're rebuilding routes in your head..."</p>
+
+            <div class="before-after-container fade-in-up">
+                <div class="before-card">
+                    <span class="card-label">Before RouteFlo</span>
+                    <h3>The 5am Scramble</h3>
+                    <ul class="chaos-list">
+                        <li>Hours rebuilding routes manually</li>
+                        <li>Drivers calling for directions</li>
+                        <li>Missed stops and angry customers</li>
+                        <li>Routes in spreadsheets, notebooks, and heads</li>
+                        <li>New customer = redo everything</li>
+                    </ul>
+                </div>
+
+                <div class="arrow-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                    <span>RouteFlo</span>
+                </div>
+
+                <div class="after-card">
+                    <span class="card-label">After RouteFlo</span>
+                    <h3>Calm & Organized</h3>
+                    <ul class="order-list">
+                        <li>Routes generated in seconds</li>
+                        <li>Drivers have clear schedules</li>
+                        <li>Every stop tracked, nothing missed</li>
+                        <li>One system of truth</li>
+                        <li>Add customers without chaos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagonal Divider Reverse -->
+        <div class="diagonal-divider reverse" aria-hidden="true"></div>
+
         <section class="problem">
             <h2>Sound Familiar?</h2>
+            <p class="section-intro">We've heard these from every mat rental and linen operator we've talked to.</p>
             <div class="problem-grid">
-                <div class="problem-card">
+                <div class="problem-card fade-in-up stagger-1">
+                    <span class="time-badge">5am daily</span>
                     <p>"I spend my mornings figuring out who goes where"</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card fade-in-up stagger-2">
+                    <span class="time-badge">10+ calls/day</span>
                     <p>"Drivers call me when they don't know the next stop"</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card fade-in-up stagger-3">
                     <p>"We've got routes in spreadsheets, notebooks, and someone's head"</p>
                 </div>
-                <div class="problem-card">
+                <div class="problem-card fade-in-up stagger-4">
                     <p>"Adding a new customer means redoing everything"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GIF Demo Section -->
+        <section class="demo-gif-section">
+            <h2>See the Difference</h2>
+            <p class="section-subtitle">Watch route chaos transform into optimized efficiency.</p>
+
+            <div class="gif-container fade-in-up">
+                <div class="gif-placeholder">
+                    <div class="play-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <p>Watch route generation in action</p>
+                    <div class="time-comparison">
+                        <div class="time-item before">
+                            <span class="time-value">3 hours</span>
+                            <span class="time-label">Manual planning</span>
+                        </div>
+                        <span class="arrow">→</span>
+                        <div class="time-item after">
+                            <span class="time-value">5 min</span>
+                            <span class="time-label">With RouteFlo</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -237,7 +323,7 @@
                 <p>Take the 2-minute Route Audit. Find out what's actually costing you hours every week.</p>
                 <div class="cta-buttons">
                     <a href="checklist.html" class="cta-button secondary">Get the Free Checklist</a>
-                    <a href="calculator.html" class="cta-button secondary">Calculate Your Savings</a>
+                    <a href="calculator.html" class="cta-button amber">Calculate Your Savings</a>
                 </div>
             </div>
         </section>
@@ -245,68 +331,72 @@
         <section class="features">
             <h2>Route Optimization Software Features</h2>
 
-            <div class="feature-block fade-in-up">
-                <div class="feature-text">
+            <!-- Bento Grid Layout -->
+            <div class="bento-grid">
+                <!-- Featured/Large Item -->
+                <div class="bento-item featured fade-in-up">
+                    <span class="feature-tag">Core Feature</span>
                     <h3>Recurring Delivery Route Scheduling</h3>
-                    <p>Built for recurring service routes, not one-time deliveries. Set customer service patterns - daily, Mon/Wed/Fri, weekly, bi-weekly, or monthly - and RouteFlo maintains those schedules automatically. Import your existing customer list via CSV to get started. Your recurring delivery software should understand that Customer A is always Tuesday while Customer B is bi-weekly Thursday. RouteFlo does.</p>
+                    <p>Built for recurring service routes, not one-time deliveries. Set customer service patterns - daily, Mon/Wed/Fri, weekly, bi-weekly, or monthly - and RouteFlo maintains those schedules automatically.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.43@2x.png" alt="Recurring delivery route scheduling dashboard">
+                    </div>
                 </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.43@2x.png" alt="Recurring delivery route scheduling dashboard for mat and linen services">
-                </div>
-            </div>
 
-            <div class="feature-block reverse fade-in-up">
-                <div class="feature-text">
-                    <h3>Automatic Route Optimization Algorithm</h3>
-                    <p>Pick a date, confirm which stops to include, and hit generate. Our route optimization algorithm builds efficient multi-stop routes for your drivers based on location, traffic patterns, and service schedules - cutting planning time by 95%.</p>
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-1">
+                    <span class="feature-tag">Automation</span>
+                    <h3>Automatic Route Optimization</h3>
+                    <p>Pick a date, confirm stops, hit generate. Our algorithm builds efficient routes in seconds - cutting planning time by 95%.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.54@2x.png" alt="Route optimization algorithm">
+                    </div>
                 </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.54@2x.png" alt="Route optimization software generating efficient delivery routes automatically">
-                </div>
-            </div>
 
-            <div class="feature-block">
-                <div class="feature-text">
+                <!-- Large Item -->
+                <div class="bento-item large fade-in-up stagger-2">
+                    <span class="feature-tag">Visual Planning</span>
                     <h3>Visual Route Planning Map</h3>
                     <p>View all your delivery routes visually. Color-coded by driver so you can see route coverage at a glance. Edit stops and adjust routes right from the map.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.06@2x.png" alt="Route planning map view">
+                    </div>
                 </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.06@2x.png" alt="Route planning map view showing color-coded delivery routes">
-                </div>
-            </div>
 
-            <div class="feature-block reverse">
-                <div class="feature-text">
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-3">
+                    <span class="feature-tag">Scheduling</span>
                     <h3>Driver Schedule Calendar</h3>
-                    <p>See which drivers are scheduled when. Plan delivery routes ahead, spot gaps, and make sure every service day is covered.</p>
+                    <p>See which drivers are scheduled when. Plan ahead, spot gaps, and ensure every service day is covered.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.29@2x.png" alt="Driver scheduling calendar">
+                    </div>
                 </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.29@2x.png" alt="Driver scheduling calendar for route management">
-                </div>
-            </div>
 
-            <div class="feature-block">
-                <div class="feature-text">
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-4">
+                    <span class="feature-tag">Mobile</span>
                     <h3>Mobile Driver App</h3>
-                    <p>Drivers see their stops in order with one tap to open in Google Maps. No confusion, no phone calls, no wrong turns. Works on any smartphone.</p>
+                    <p>Drivers see their stops in order with one tap to open in Google Maps. No confusion, no phone calls.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.59.04@2x.png" alt="Mobile driver app">
+                    </div>
                 </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.59.04@2x.png" alt="Mobile driver app showing delivery route schedule with Google Maps integration">
-                </div>
-            </div>
 
-            <div class="feature-block reverse">
-                <div class="feature-text">
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-5">
+                    <span class="feature-tag">Inventory</span>
                     <h3>Materials & Inventory Tracking</h3>
-                    <p>Keep tabs on mat and linen inventory. Know what's in stock, what's assigned to customers, and when you need to reorder.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.47@2x.png" alt="Mat and linen inventory tracking software dashboard">
+                    <p>Keep tabs on mat and linen inventory. Know what's in stock, what's assigned, and when to reorder.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.47@2x.png" alt="Inventory tracking">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="benefits">
+            <div class="fabric-texture" aria-hidden="true"></div>
             <h2>What Changes When You Switch to Route Optimization</h2>
             <div class="benefits-grid">
                 <div class="benefit fade-in-up stagger-1">
@@ -329,7 +419,7 @@
                     <h3>Fewer Driver Calls</h3>
                     <p>Drivers know exactly where to go. You get your morning back.</p>
                 </div>
-                <div class="benefit fade-in-up stagger-3">
+                <div class="benefit highlight fade-in-up stagger-3">
                     <div class="benefit-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="12" y1="1" x2="12" y2="23"></line>
@@ -418,25 +508,25 @@
             <p class="industries-intro">RouteFlo provides specialized route planning for recurring service operations. Here's how our software solves routing challenges in your industry.</p>
 
             <div class="industries-grid">
-                <div class="industry-card">
+                <div class="industry-card fade-in-up stagger-1">
                     <h3>Mat Rental Route Software</h3>
                     <p>Floor mat rental companies run tight weekly schedules across hundreds of stops. Generic route tools don't understand that Customer A needs service every Tuesday while Customer B is bi-weekly. RouteFlo's mat rental route software handles complex recurring schedules, tracks mat inventory at each location, and generates routes that respect your established service patterns. Stop losing hours rebuilding routes manually when a driver calls out sick.</p>
                     <a href="mat-rental.html" class="industry-link">Learn more about mat rental route software →</a>
                 </div>
 
-                <div class="industry-card">
+                <div class="industry-card fade-in-up stagger-2">
                     <h3>Linen Delivery Route Planning</h3>
                     <p>Hotels and healthcare facilities expect their linens delivered on time, every time. Linen delivery route planning with RouteFlo keeps your service reliable even as you add new accounts. Our software handles split deliveries, manages route density for maximum efficiency, and ensures drivers arrive during receiving hours. Healthcare linen routes and hotel linen delivery schedules stay consistent - your customers notice the difference.</p>
                     <a href="linen-services.html" class="industry-link">Learn more about linen delivery route software →</a>
                 </div>
 
-                <div class="industry-card">
+                <div class="industry-card fade-in-up stagger-3">
                     <h3>Uniform Service Route Optimization</h3>
                     <p>Industrial uniform and workwear delivery requires balancing route efficiency with customer availability. Uniform service route optimization through RouteFlo accounts for dock schedules, employee shift changes, and the heavy nature of workwear loads. Build routes that maximize stops while keeping drivers on schedule. Our uniform rental route management keeps your fleet moving without the constant dispatch calls.</p>
                     <a href="uniform-services.html" class="industry-link">Learn more about uniform delivery route software →</a>
                 </div>
 
-                <div class="industry-card">
+                <div class="industry-card fade-in-up stagger-4">
                     <h3>Textile Rental Route Management</h3>
                     <p>Whether you're managing dust control services, shop towel delivery, or full textile rental operations, route consistency drives customer satisfaction. RouteFlo's textile rental route management software optimizes recurring service routes while tracking what's out for service at each location. Industrial laundry route planning becomes straightforward when your software actually understands the recurring delivery model.</p>
                 </div>
@@ -519,7 +609,7 @@
                         <option value="25+">25+ drivers</option>
                     </select>
                 </div>
-                <button type="submit" class="cta-button">Book My Demo</button>
+                <button type="submit" class="cta-button amber">Book My Demo</button>
             </form>
         </section>
     </main>
@@ -540,7 +630,8 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.fade-in-up').forEach(el => {
+            // Observe both fade-in-up and scale-in elements
+            document.querySelectorAll('.fade-in-up, .scale-in').forEach(el => {
                 observer.observe(el);
             });
         });

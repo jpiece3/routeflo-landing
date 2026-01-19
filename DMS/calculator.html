@@ -14,18 +14,75 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --color-bg-dark: #0a0a0a;
+            --color-bg-secondary: #111111;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #a1a1aa;
+            --color-text-muted: #71717a;
+            --color-action-green: #10b981;
+            --color-action-green-hover: #059669;
+            --color-border: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-bg-hover: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(20px);
+            --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #f8fafc;
+            color: var(--color-text-primary);
+            background: var(--color-bg-dark);
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--color-action-green) 0%, transparent 70%);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-5deg); }
         }
 
         header {
-            background: #fff;
-            border-bottom: 1px solid #e5e5e5;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-bottom: 1px solid var(--glass-border);
             padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav {
@@ -39,18 +96,19 @@
         .logo {
             font-weight: 700;
             font-size: 1.4rem;
-            color: #059669;
+            color: var(--color-action-green);
             text-decoration: none;
         }
 
         .nav-link {
-            color: #64748b;
+            color: var(--color-text-secondary);
             text-decoration: none;
             font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #059669;
+            color: var(--color-action-green);
         }
 
         main {
@@ -68,31 +126,34 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            color: #1a1a1a;
+            color: var(--color-text-primary);
         }
 
         .intro p {
-            color: #64748b;
+            color: var(--color-text-secondary);
             font-size: 1.1rem;
         }
 
         .calculator {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: var(--shadow-glass);
         }
 
         .inputs-section {
             padding: 2rem;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         .inputs-section h2 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            color: #475569;
+            color: var(--color-text-secondary);
         }
 
         .input-group {
@@ -108,6 +169,7 @@
             font-weight: 500;
             margin-bottom: 0.5rem;
             font-size: 0.95rem;
+            color: var(--color-text-primary);
         }
 
         .input-row {
@@ -124,7 +186,7 @@
             width: 100%;
             height: 8px;
             -webkit-appearance: none;
-            background: #e2e8f0;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             outline: none;
         }
@@ -133,18 +195,20 @@
             -webkit-appearance: none;
             width: 20px;
             height: 20px;
-            background: #10b981;
+            background: var(--color-action-green);
             border-radius: 50%;
             cursor: pointer;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
 
         input[type="range"]::-moz-range-thumb {
             width: 20px;
             height: 20px;
-            background: #10b981;
+            background: var(--color-action-green);
             border-radius: 50%;
             cursor: pointer;
             border: none;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
         }
 
         .value-display {
@@ -152,38 +216,41 @@
             text-align: right;
             font-weight: 600;
             font-size: 1.1rem;
-            color: #1a1a1a;
+            color: var(--color-text-primary);
         }
 
         .input-number {
             width: 100px;
             padding: 0.5rem 0.75rem;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-text-primary);
         }
 
         .input-number:focus {
             outline: none;
-            border-color: #10b981;
+            border-color: var(--color-action-green);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
         }
 
         .input-prefix {
-            color: #64748b;
+            color: var(--color-text-secondary);
             font-weight: 500;
         }
 
         .results-section {
             padding: 2rem;
-            background: #f0fdf4;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 78, 59, 0.2) 100%);
         }
 
         .results-section h2 {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
-            color: #065f46;
+            color: var(--color-action-green);
         }
 
         .results-grid {
@@ -194,46 +261,51 @@
         }
 
         .result-card {
-            background: #fff;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
             padding: 1.25rem;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
         .result-card.highlight {
-            background: #064e3b;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(6, 78, 59, 0.4) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.4);
             color: #fff;
             grid-column: span 2;
         }
 
         .result-label {
             font-size: 0.85rem;
-            color: #64748b;
+            color: var(--color-text-secondary);
             margin-bottom: 0.25rem;
         }
 
         .result-card.highlight .result-label {
-            color: #a7f3d0;
+            color: rgba(167, 243, 208, 0.9);
         }
 
         .result-value {
             font-size: 1.75rem;
             font-weight: 700;
-            color: #1a1a1a;
+            color: var(--color-text-primary);
         }
 
         .result-card.highlight .result-value {
             color: #fff;
             font-size: 2.25rem;
+            text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
         }
 
         .result-note {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--color-text-muted);
             margin-top: 0.25rem;
         }
 
         .result-card.highlight .result-note {
-            color: #a7f3d0;
+            color: rgba(167, 243, 208, 0.8);
         }
 
         .comparison {
@@ -243,8 +315,11 @@
             align-items: center;
             margin-bottom: 2rem;
             padding: 1.25rem;
-            background: #fff;
-            border-radius: 8px;
+            background: var(--glass-bg);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
         }
 
         .comparison-item {
@@ -253,7 +328,7 @@
 
         .comparison-label {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--color-text-secondary);
             margin-bottom: 0.25rem;
         }
 
@@ -263,16 +338,16 @@
         }
 
         .comparison-value.current {
-            color: #dc2626;
+            color: #f87171;
         }
 
         .comparison-value.new {
-            color: #059669;
+            color: var(--color-action-green);
         }
 
         .comparison-arrow {
             font-size: 1.5rem;
-            color: #10b981;
+            color: var(--color-action-green);
         }
 
         .cta-section {
@@ -281,32 +356,35 @@
 
         .cta-section p {
             margin-bottom: 1rem;
-            color: #065f46;
+            color: var(--color-text-secondary);
         }
 
         .cta-button {
             display: inline-block;
-            background: #10b981;
+            background: var(--color-action-green);
             color: #fff;
             font-size: 1.05rem;
             font-weight: 600;
             padding: 0.9rem 2rem;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             text-decoration: none;
-            transition: background 0.2s;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
         }
 
         .cta-button:hover {
-            background: #059669;
+            background: var(--color-action-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
         }
 
         .disclaimer {
             text-align: center;
             margin-top: 2rem;
             font-size: 0.85rem;
-            color: #94a3b8;
+            color: var(--color-text-muted);
         }
 
         @media (max-width: 600px) {
@@ -344,7 +422,7 @@
     <main>
         <div class="intro">
             <h1>How Much Is Manual Routing Costing You?</h1>
-            <p>Adjust the sliders to see your hidden costs—and what you'd save.</p>
+            <p>Adjust the sliders to see your hidden costs-and what you'd save.</p>
         </div>
 
         <div class="calculator">
@@ -405,7 +483,7 @@
                         <div class="comparison-label">Current: Manual Routing</div>
                         <div class="comparison-value current"><span id="currentWeekly">6.7</span> hrs/week</div>
                     </div>
-                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-arrow">&rarr;</div>
                     <div class="comparison-item">
                         <div class="comparison-label">With RouteFlo</div>
                         <div class="comparison-value new">~30 min/week</div>

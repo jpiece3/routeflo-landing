@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "name": "routeflo-landing",
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "buildCommand": "",
+  "outputDirectory": "."
+}

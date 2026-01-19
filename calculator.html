@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator | RouteFlo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1rem 1.5rem;
+        }
+
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #059669;
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav-link:hover {
+            color: #059669;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        .intro p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .calculator {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .inputs-section {
+            padding: 2rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .inputs-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #475569;
+        }
+
+        .input-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .input-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .slider-container {
+            flex: 1;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            -webkit-appearance: none;
+            background: #e2e8f0;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #10b981;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #10b981;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .value-display {
+            min-width: 80px;
+            text-align: right;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        .input-number {
+            width: 100px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .input-number:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+
+        .input-prefix {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .results-section {
+            padding: 2rem;
+            background: #f0fdf4;
+        }
+
+        .results-section h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #065f46;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-card {
+            background: #fff;
+            padding: 1.25rem;
+            border-radius: 8px;
+        }
+
+        .result-card.highlight {
+            background: #064e3b;
+            color: #fff;
+            grid-column: span 2;
+        }
+
+        .result-label {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+
+        .result-card.highlight .result-label {
+            color: #a7f3d0;
+        }
+
+        .result-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .result-card.highlight .result-value {
+            color: #fff;
+            font-size: 2.25rem;
+        }
+
+        .result-note {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .result-card.highlight .result-note {
+            color: #a7f3d0;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.25rem;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-bottom: 0.25rem;
+        }
+
+        .comparison-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .comparison-value.current {
+            color: #dc2626;
+        }
+
+        .comparison-value.new {
+            color: #059669;
+        }
+
+        .comparison-arrow {
+            font-size: 1.5rem;
+            color: #10b981;
+        }
+
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-section p {
+            margin-bottom: 1rem;
+            color: #065f46;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #10b981;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover {
+            background: #059669;
+        }
+
+        .disclaimer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 600px) {
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-card.highlight {
+                grid-column: span 1;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .comparison-arrow {
+                transform: rotate(90deg);
+            }
+
+            .value-display {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">RouteFlo</a>
+            <a href="index.html" class="nav-link">Back to Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h1>How Much Is Manual Routing Costing You?</h1>
+            <p>Adjust the sliders to see your hidden costs—and what you'd save.</p>
+        </div>
+
+        <div class="calculator">
+            <div class="inputs-section">
+                <h2>Your Current Situation</h2>
+
+                <div class="input-group">
+                    <label>Hours spent on route planning per week</label>
+                    <div class="input-row">
+                        <div class="slider-container">
+                            <input type="range" id="planningHours" min="1" max="20" value="5">
+                        </div>
+                        <div class="value-display"><span id="planningHoursValue">5</span> hrs</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>"Where do I go next?" calls per day</label>
+                    <div class="input-row">
+                        <div class="slider-container">
+                            <input type="range" id="driverCalls" min="0" max="15" value="4">
+                        </div>
+                        <div class="value-display"><span id="driverCallsValue">4</span> calls</div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Your hourly cost (salary + overhead)</label>
+                    <div class="input-row">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="hourlyRate" class="input-number" value="35" min="15" max="200">
+                        <span class="input-prefix">/hr</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h2>What You're Losing</h2>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-label">Weekly time on routing</div>
+                        <div class="result-value"><span id="weeklyHours">6.7</span> hrs</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-label">Annual time on routing</div>
+                        <div class="result-value"><span id="annualHours">347</span> hrs</div>
+                    </div>
+                    <div class="result-card highlight">
+                        <div class="result-label">You could save</div>
+                        <div class="result-value">$<span id="annualSavings">11,375</span>/year</div>
+                        <div class="result-note">Based on your inputs</div>
+                    </div>
+                </div>
+
+                <div class="comparison">
+                    <div class="comparison-item">
+                        <div class="comparison-label">Current: Manual Routing</div>
+                        <div class="comparison-value current"><span id="currentWeekly">6.7</span> hrs/week</div>
+                    </div>
+                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-item">
+                        <div class="comparison-label">With RouteFlo</div>
+                        <div class="comparison-value new">~30 min/week</div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <p>See how RouteFlo can give you those hours back.</p>
+                    <a href="index.html#demo" class="cta-button">Book a 15-Minute Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="disclaimer">
+            Estimates based on industry averages. Your actual results may vary.
+        </p>
+    </main>
+
+    <script>
+        // Get elements
+        const planningHoursSlider = document.getElementById('planningHours');
+        const driverCallsSlider = document.getElementById('driverCalls');
+        const hourlyRateInput = document.getElementById('hourlyRate');
+
+        const planningHoursValue = document.getElementById('planningHoursValue');
+        const driverCallsValue = document.getElementById('driverCallsValue');
+
+        const weeklyHoursEl = document.getElementById('weeklyHours');
+        const annualHoursEl = document.getElementById('annualHours');
+        const annualSavingsEl = document.getElementById('annualSavings');
+        const currentWeeklyEl = document.getElementById('currentWeekly');
+
+        // Calculate and update results
+        function calculate() {
+            const planningHours = parseFloat(planningHoursSlider.value);
+            const driverCalls = parseFloat(driverCallsSlider.value);
+            const hourlyRate = parseFloat(hourlyRateInput.value) || 35;
+
+            // Update display values
+            planningHoursValue.textContent = planningHours;
+            driverCallsValue.textContent = driverCalls;
+
+            // Calculate time lost
+            // Each call = ~5 min, 5 days a week
+            const weeklyCallTime = (driverCalls * 5 * 5) / 60; // hours
+            const totalWeeklyHours = planningHours + weeklyCallTime;
+            const annualHours = totalWeeklyHours * 52;
+
+            // With RouteFlo = 0.5 hours/week
+            const routeFloWeekly = 0.5;
+            const savedWeeklyHours = totalWeeklyHours - routeFloWeekly;
+            const annualSavings = savedWeeklyHours * 52 * hourlyRate;
+
+            // Update results
+            weeklyHoursEl.textContent = totalWeeklyHours.toFixed(1);
+            currentWeeklyEl.textContent = totalWeeklyHours.toFixed(1);
+            annualHoursEl.textContent = Math.round(annualHours);
+            annualSavingsEl.textContent = Math.round(annualSavings).toLocaleString();
+        }
+
+        // Add event listeners
+        planningHoursSlider.addEventListener('input', calculate);
+        driverCallsSlider.addEventListener('input', calculate);
+        hourlyRateInput.addEventListener('input', calculate);
+
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>

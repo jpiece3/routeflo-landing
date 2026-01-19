@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Optimization for Mat Rental & Linen Services | RouteFlo</title>
+    <meta name="description" content="RouteFlo helps mat rental, linen, and uniform service companies optimize recurring delivery routes. Cut planning time by 95%, reduce fuel costs up to 40%, and increase stops per route.">
+    <meta name="keywords" content="route optimization software, mat rental route software, linen delivery route planning, uniform service route optimization, recurring delivery route software, recurring service route software, textile rental route management, laundry service route planner, route management software, driver scheduling software">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://routeflo.com/">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Route Optimization for Mat Rental & Linen Services | RouteFlo">
+    <meta property="og:description" content="RouteFlo helps mat rental, linen, and uniform service companies optimize recurring delivery routes. Cut planning time by 95%, reduce fuel costs up to 40%.">
+    <meta property="og:url" content="https://routeflo.com/">
+    <meta property="og:site_name" content="RouteFlo">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Route Optimization for Mat Rental & Linen Services">
+    <meta name="twitter:description" content="RouteFlo helps mat rental, linen, and uniform service companies optimize recurring delivery routes. Cut planning time by 95%, reduce fuel costs up to 40%.">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RouteFlo",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "Route Optimization Software",
+        "operatingSystem": "Web",
+        "description": "Route optimization software designed for recurring delivery operations including mat rental, linen services, and uniform delivery. Reduce route planning time by 95% and cut delivery costs up to 40% with intelligent route optimization.",
+        "offers": {
+            "@type": "Offer",
+            "category": "Route Optimization Software",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Automatic route optimization algorithm",
+            "Driver mobile app with GPS navigation",
+            "Visual route planning map",
+            "Recurring delivery scheduling (daily, weekly, bi-weekly)",
+            "Materials and inventory tracking",
+            "CSV customer import",
+            "Driver scheduling calendar",
+            "Real-time delivery tracking",
+            "Multi-stop route planning"
+        ],
+        "screenshot": "https://routeflo.com/dms_screenshots/CleanShot%202026-01-17%20at%2015.58.06@2x.png",
+        "softwareHelp": {
+            "@type": "CreativeWork",
+            "name": "RouteFlo Documentation"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is route optimization software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Route optimization software helps businesses plan the most efficient routes for delivery vehicles. It uses algorithms and real-time data to minimize drive time, avoid traffic delays, reduce fuel costs, and increase the number of stops per day. Modern route optimization software can reduce delivery costs by up to 40% and cut planning time by 95%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is RouteFlo different from Routific or OptimoRoute?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RouteFlo is built specifically for recurring service delivery - mat rental, linen services, and uniform delivery. Unlike generic route software designed for one-time deliveries, RouteFlo handles customers with set service days (Mon/Wed/Fri, weekly, bi-weekly) and generates routes that follow your existing service patterns. It includes materials tracking that general delivery software lacks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much time does route planning software save?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Route planning software typically reduces manual planning time by 95%. What used to take hours of spreadsheet work can be done in seconds. Operations also see 15-40% reductions in total drive time through optimized routing, saving on fuel costs and allowing more deliveries per day."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to set up?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most operations are up and running within a day. You can import your existing customer list via CSV, set up your drivers, and start generating optimized routes immediately. No special hardware or app store downloads required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do drivers need a special app?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Drivers access their schedule through a simple web app that works on any smartphone. One tap opens each stop in Google Maps for turn-by-turn navigation. No app store download required - just open a link in the browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What industries use route optimization software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Route optimization software is used across delivery industries including mat rental, linen services, uniform delivery, food distribution, HVAC services, and any business with recurring route-based operations. RouteFlo specializes in textile rental and recurring service delivery."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is recurring route software?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recurring route software is route optimization built for businesses that visit the same customers on set schedules - daily, weekly, bi-weekly, or monthly. Unlike one-time delivery software, recurring route software maintains customer service schedules, handles substitutions when drivers are unavailable, and keeps routes consistent. Mat rental, linen services, and uniform delivery operations need recurring route software specifically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does mat rental route optimization work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Mat rental route optimization takes your customer list with their service schedules and generates efficient routes for each service day. The software considers stop locations, time windows, driver availability, and recurring patterns to build routes that minimize drive time while ensuring every customer gets serviced on their scheduled day. RouteFlo also tracks mat inventory at each location."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the best route optimization for linen services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best route optimization for linen services handles the complexity of recurring deliveries - hotels need fresh linens every day, healthcare facilities have strict schedules, and restaurants have specific delivery windows. RouteFlo understands that linen delivery is about maintaining service patterns, not just finding the shortest path. Our linen delivery route planning keeps your operation reliable while maximizing route efficiency."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Subtle noise texture overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <header>
+        <nav>
+            <div class="logo">RouteFlo</div>
+            <a href="#demo" class="nav-cta">Get a Demo</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="route-pattern" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-sub-keyword">Recurring Route Optimization for Mat Rental & Linen Services</p>
+                    <h1>Route Your Drivers.<br>Not Your Day.</h1>
+                    <p class="hero-sub">Stop managing mat deliveries with spreadsheets and phone calls. Our route optimization software generates efficient driver routes in seconds - giving your team a schedule they can actually follow.</p>
+                    <a href="#demo" class="cta-button primary-cta">See It In Action</a>
+
+                    <!-- Micro Stats Row - Amber accent for ROI -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="stat-value">95%</span>
+                            <span class="stat-label">less planning time</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-label">lower costs</span>
+                        </div>
+                        <div class="hero-stat-divider"></div>
+                        <div class="hero-stat">
+                            <span class="stat-value">500+</span>
+                            <span class="stat-label">routes optimized</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.06@2x.png" alt="Route optimization software map view showing optimized delivery routes">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Ribbon -->
+        <div class="trust-ribbon">
+            <p>Trusted by mat rental & linen companies across the <span>US</span></p>
+        </div>
+
+        <!-- Social Proof Section - Redesigned without empty logos -->
+        <section class="social-proof">
+            <!-- Credibility Stats instead of empty logos -->
+            <div class="credibility-stats fade-in-up">
+                <div class="credibility-stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Operations</span>
+                </div>
+                <div class="credibility-stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Weekly Stops</span>
+                </div>
+                <div class="credibility-stat">
+                    <span class="stat-number">3hrs</span>
+                    <span class="stat-label">Saved Daily</span>
+                </div>
+            </div>
+
+            <div class="testimonial-block fade-in-up">
+                <blockquote>
+                    "We went from 3 hours of route planning every morning to under 5 minutes. Our drivers actually know where they're going now."
+                </blockquote>
+                <cite>
+                    <strong>Operations Manager</strong>
+                    <span>Regional Mat Rental Company</span>
+                </cite>
+            </div>
+
+            <div class="proof-metrics">
+                <div class="proof-metric scale-in">
+                    <span class="metric-value">10,000+</span>
+                    <span class="metric-label">stops optimized weekly</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagonal Divider -->
+        <div class="diagonal-divider" aria-hidden="true"></div>
+
+        <!-- Before/After Chaos Visual -->
+        <section class="chaos-to-order">
+            <h2>We Get Your Chaos</h2>
+            <p class="section-subtitle">"It's 5am. The whiteboard is a mess. A driver called out. And you're rebuilding routes in your head..."</p>
+
+            <div class="before-after-container fade-in-up">
+                <div class="before-card">
+                    <span class="card-label">Before RouteFlo</span>
+                    <h3>The 5am Scramble</h3>
+                    <ul class="chaos-list">
+                        <li>Hours rebuilding routes manually</li>
+                        <li>Drivers calling for directions</li>
+                        <li>Missed stops and angry customers</li>
+                        <li>Routes in spreadsheets, notebooks, and heads</li>
+                        <li>New customer = redo everything</li>
+                    </ul>
+                </div>
+
+                <div class="arrow-container">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                    <span>RouteFlo</span>
+                </div>
+
+                <div class="after-card">
+                    <span class="card-label">After RouteFlo</span>
+                    <h3>Calm & Organized</h3>
+                    <ul class="order-list">
+                        <li>Routes generated in seconds</li>
+                        <li>Drivers have clear schedules</li>
+                        <li>Every stop tracked, nothing missed</li>
+                        <li>One system of truth</li>
+                        <li>Add customers without chaos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagonal Divider Reverse -->
+        <div class="diagonal-divider reverse" aria-hidden="true"></div>
+
+        <section class="problem">
+            <h2>Sound Familiar?</h2>
+            <p class="section-intro">We've heard these from every mat rental and linen operator we've talked to.</p>
+            <div class="problem-grid">
+                <div class="problem-card fade-in-up stagger-1">
+                    <span class="time-badge">5am daily</span>
+                    <p>"I spend my mornings figuring out who goes where"</p>
+                </div>
+                <div class="problem-card fade-in-up stagger-2">
+                    <span class="time-badge">10+ calls/day</span>
+                    <p>"Drivers call me when they don't know the next stop"</p>
+                </div>
+                <div class="problem-card fade-in-up stagger-3">
+                    <p>"We've got routes in spreadsheets, notebooks, and someone's head"</p>
+                </div>
+                <div class="problem-card fade-in-up stagger-4">
+                    <p>"Adding a new customer means redoing everything"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GIF Demo Section -->
+        <section class="demo-gif-section">
+            <h2>See the Difference</h2>
+            <p class="section-subtitle">Watch route chaos transform into optimized efficiency.</p>
+
+            <div class="gif-container fade-in-up">
+                <div class="gif-placeholder">
+                    <div class="play-icon">
+                        <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    </div>
+                    <p>Watch route generation in action</p>
+                    <div class="time-comparison">
+                        <div class="time-item before">
+                            <span class="time-value">3 hours</span>
+                            <span class="time-label">Manual planning</span>
+                        </div>
+                        <span class="arrow">→</span>
+                        <div class="time-item after">
+                            <span class="time-value">5 min</span>
+                            <span class="time-label">With RouteFlo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="checklist-cta">
+            <div class="checklist-content">
+                <h2>Not Ready for a Demo?</h2>
+                <p>Take the 2-minute Route Audit. Find out what's actually costing you hours every week.</p>
+                <div class="cta-buttons">
+                    <a href="checklist.html" class="cta-button secondary">Get the Free Checklist</a>
+                    <a href="calculator.html" class="cta-button amber">Calculate Your Savings</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Route Optimization Software Features</h2>
+
+            <!-- Bento Grid Layout -->
+            <div class="bento-grid">
+                <!-- Featured/Large Item -->
+                <div class="bento-item featured fade-in-up">
+                    <span class="feature-tag">Core Feature</span>
+                    <h3>Recurring Delivery Route Scheduling</h3>
+                    <p>Built for recurring service routes, not one-time deliveries. Set customer service patterns - daily, Mon/Wed/Fri, weekly, bi-weekly, or monthly - and RouteFlo maintains those schedules automatically.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.43@2x.png" alt="Recurring delivery route scheduling dashboard">
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-1">
+                    <span class="feature-tag">Automation</span>
+                    <h3>Automatic Route Optimization</h3>
+                    <p>Pick a date, confirm stops, hit generate. Our algorithm builds efficient routes in seconds - cutting planning time by 95%.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.57.54@2x.png" alt="Route optimization algorithm">
+                    </div>
+                </div>
+
+                <!-- Large Item -->
+                <div class="bento-item large fade-in-up stagger-2">
+                    <span class="feature-tag">Visual Planning</span>
+                    <h3>Visual Route Planning Map</h3>
+                    <p>View all your delivery routes visually. Color-coded by driver so you can see route coverage at a glance. Edit stops and adjust routes right from the map.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.06@2x.png" alt="Route planning map view">
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-3">
+                    <span class="feature-tag">Scheduling</span>
+                    <h3>Driver Schedule Calendar</h3>
+                    <p>See which drivers are scheduled when. Plan ahead, spot gaps, and ensure every service day is covered.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.29@2x.png" alt="Driver scheduling calendar">
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-4">
+                    <span class="feature-tag">Mobile</span>
+                    <h3>Mobile Driver App</h3>
+                    <p>Drivers see their stops in order with one tap to open in Google Maps. No confusion, no phone calls.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.59.04@2x.png" alt="Mobile driver app">
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item fade-in-up stagger-5">
+                    <span class="feature-tag">Inventory</span>
+                    <h3>Materials & Inventory Tracking</h3>
+                    <p>Keep tabs on mat and linen inventory. Know what's in stock, what's assigned, and when to reorder.</p>
+                    <div class="bento-image">
+                        <img src="dms_screenshots/CleanShot 2026-01-17 at 15.58.47@2x.png" alt="Inventory tracking">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="fabric-texture" aria-hidden="true"></div>
+            <h2>What Changes When You Switch to Route Optimization</h2>
+            <div class="benefits-grid">
+                <div class="benefit fade-in-up stagger-1">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>95% Less Planning Time</h3>
+                    <p>Generate optimized routes in seconds instead of hours of spreadsheet work.</p>
+                </div>
+                <div class="benefit fade-in-up stagger-2">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <line x1="1" y1="1" x2="23" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3>Fewer Driver Calls</h3>
+                    <p>Drivers know exactly where to go. You get your morning back.</p>
+                </div>
+                <div class="benefit highlight fade-in-up stagger-3">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3>Up to 40% Lower Costs</h3>
+                    <p>Optimized routing means less driving, less fuel, more stops per day.</p>
+                </div>
+                <div class="benefit fade-in-up stagger-4">
+                    <div class="benefit-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Nothing Falls Through</h3>
+                    <p>Every customer, every service day, tracked in one place.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison">
+            <h2>Why RouteFlo vs Generic Route Software</h2>
+            <p class="comparison-intro">Most route optimization tools are built for one-time deliveries. RouteFlo is built for your recurring service business.</p>
+
+            <div class="comparison-table-wrapper fade-in-up">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="routeflo-col">RouteFlo</th>
+                            <th class="generic-col">Generic Tools</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Recurring delivery schedules</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="cross">&#10005;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Same-day service patterns</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="cross">&#10005;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mat/linen inventory tracking</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="cross">&#10005;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Built for service routes</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="cross">&#10005;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Driver schedule management</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="partial">Limited</span></td>
+                        </tr>
+                        <tr>
+                            <td>Mobile driver app</td>
+                            <td class="routeflo-col"><span class="check">&#10003;</span></td>
+                            <td class="generic-col"><span class="check">&#10003;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="who">
+            <h2>Route Optimization Built for Mat & Linen Delivery</h2>
+            <p>We built this route planning software specifically for recurring delivery operations. If you're delivering mats, linens, uniforms, or similar products on a set schedule - generic delivery software won't cut it. RouteFlo handles the complexity of recurring routes that other platforms can't.</p>
+            <div class="who-list">
+                <span>Mat Rental Companies</span>
+                <span>Linen Service Providers</span>
+                <span>Uniform Delivery Services</span>
+                <span>Recurring Route Operations</span>
+            </div>
+        </section>
+
+        <section class="industries">
+            <h2>Route Optimization by Industry</h2>
+            <p class="industries-intro">RouteFlo provides specialized route planning for recurring service operations. Here's how our software solves routing challenges in your industry.</p>
+
+            <div class="industries-grid">
+                <div class="industry-card fade-in-up stagger-1">
+                    <h3>Mat Rental Route Software</h3>
+                    <p>Floor mat rental companies run tight weekly schedules across hundreds of stops. Generic route tools don't understand that Customer A needs service every Tuesday while Customer B is bi-weekly. RouteFlo's mat rental route software handles complex recurring schedules, tracks mat inventory at each location, and generates routes that respect your established service patterns. Stop losing hours rebuilding routes manually when a driver calls out sick.</p>
+                    <a href="mat-rental.html" class="industry-link">Learn more about mat rental route software →</a>
+                </div>
+
+                <div class="industry-card fade-in-up stagger-2">
+                    <h3>Linen Delivery Route Planning</h3>
+                    <p>Hotels and healthcare facilities expect their linens delivered on time, every time. Linen delivery route planning with RouteFlo keeps your service reliable even as you add new accounts. Our software handles split deliveries, manages route density for maximum efficiency, and ensures drivers arrive during receiving hours. Healthcare linen routes and hotel linen delivery schedules stay consistent - your customers notice the difference.</p>
+                    <a href="linen-services.html" class="industry-link">Learn more about linen delivery route software →</a>
+                </div>
+
+                <div class="industry-card fade-in-up stagger-3">
+                    <h3>Uniform Service Route Optimization</h3>
+                    <p>Industrial uniform and workwear delivery requires balancing route efficiency with customer availability. Uniform service route optimization through RouteFlo accounts for dock schedules, employee shift changes, and the heavy nature of workwear loads. Build routes that maximize stops while keeping drivers on schedule. Our uniform rental route management keeps your fleet moving without the constant dispatch calls.</p>
+                    <a href="uniform-services.html" class="industry-link">Learn more about uniform delivery route software →</a>
+                </div>
+
+                <div class="industry-card fade-in-up stagger-4">
+                    <h3>Textile Rental Route Management</h3>
+                    <p>Whether you're managing dust control services, shop towel delivery, or full textile rental operations, route consistency drives customer satisfaction. RouteFlo's textile rental route management software optimizes recurring service routes while tracking what's out for service at each location. Industrial laundry route planning becomes straightforward when your software actually understands the recurring delivery model.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq">
+            <h2>Frequently Asked Questions About Route Optimization Software</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What is route optimization software?</h3>
+                    <p>Route optimization software helps businesses plan the most efficient routes for delivery vehicles. It uses algorithms and real-time data to minimize drive time, avoid traffic delays, reduce fuel costs, and increase the number of stops per day. Modern route optimization software can reduce delivery costs by up to 40% and cut planning time by 95%.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is RouteFlo different from Routific or OptimoRoute?</h3>
+                    <p>RouteFlo is built specifically for recurring service delivery - mat rental, linen services, and uniform delivery. Unlike generic route software designed for one-time deliveries, RouteFlo handles customers with set service days (Mon/Wed/Fri, weekly, bi-weekly) and generates routes that follow your existing service patterns. It includes materials tracking that general delivery software lacks.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much time does route planning software save?</h3>
+                    <p>Route planning software typically reduces manual planning time by 95%. What used to take hours of spreadsheet work can be done in seconds. Operations also see 15-40% reductions in total drive time through optimized routing, saving on fuel costs and allowing more deliveries per day.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long does it take to set up?</h3>
+                    <p>Most operations are up and running within a day. You can import your existing customer list via CSV, set up your drivers, and start generating optimized routes immediately. No special hardware or app store downloads required.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do drivers need a special app?</h3>
+                    <p>Drivers access their schedule through a simple web app that works on any smartphone. One tap opens each stop in Google Maps for turn-by-turn navigation. No app store download required - just open a link in the browser.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What industries use route optimization software?</h3>
+                    <p>Route optimization software is used across delivery industries including mat rental, linen services, uniform delivery, food distribution, HVAC services, and any business with recurring route-based operations. RouteFlo specializes in textile rental and recurring service delivery.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is recurring route software?</h3>
+                    <p>Recurring route software is route optimization built for businesses that visit the same customers on set schedules - daily, weekly, bi-weekly, or monthly. Unlike one-time delivery software (food delivery, package shipping), recurring route software maintains customer service schedules, handles substitutions when drivers are unavailable, and keeps routes consistent so customers see the same driver at the same time. Mat rental, linen services, and uniform delivery operations need recurring route software specifically.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does mat rental route optimization work?</h3>
+                    <p>Mat rental route optimization takes your customer list with their service schedules and generates efficient routes for each service day. The software considers stop locations, time windows, driver availability, and recurring patterns to build routes that minimize drive time while ensuring every customer gets serviced on their scheduled day. RouteFlo also tracks mat inventory at each location so drivers know exactly what to pick up and drop off at every stop.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's the best route optimization for linen services?</h3>
+                    <p>The best route optimization for linen services handles the complexity of recurring deliveries - hotels need fresh linens every day, healthcare facilities have strict schedules, and restaurants have specific delivery windows. Generic route software treats every stop as a one-time event. RouteFlo understands that linen delivery is about maintaining service patterns, not just finding the shortest path. Our linen delivery route planning keeps your operation reliable while maximizing route efficiency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo-form">
+            <h2>See How It Works</h2>
+            <p>15-minute demo. We'll show you exactly how to get your routes out of spreadsheets and into a system that actually works.</p>
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone (optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="drivers">How many drivers do you have?</label>
+                    <select id="drivers" name="drivers">
+                        <option value="">Select</option>
+                        <option value="1-3">1-3 drivers</option>
+                        <option value="4-10">4-10 drivers</option>
+                        <option value="11-25">11-25 drivers</option>
+                        <option value="25+">25+ drivers</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-button amber">Book My Demo</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe both fade-in-up and scale-in elements
+            document.querySelectorAll('.fade-in-up, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-social-proof">
+            <p>Join <strong>50+ delivery operations</strong> using RouteFlo to optimize their routes</p>
+        </div>
+        <div class="footer-content">
+            <div class="footer-col footer-brand">
+                <h4>RouteFlo</h4>
+                <p>Route optimization software for mat rental, linen services, and uniform delivery operations.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <a href="mat-rental.html">Mat Rental</a>
+                <a href="linen-services.html">Linen Services</a>
+                <a href="uniform-services.html">Uniform Delivery</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="checklist.html">Route Audit Checklist</a>
+                <a href="calculator.html">Savings Calculator</a>
+                <a href="#faq">FAQs</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:hello@routeflo.com">hello@routeflo.com</a>
+                <a href="#demo">Request a Demo</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RouteFlo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
